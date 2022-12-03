@@ -28,6 +28,9 @@ function addMarkupIntoGallery() {
 
 function onGalleryItemClick(event) {
   event.preventDefault();
+  console.log(event.target);
+
+  if (!event.target.classList.contains("gallery__image")) return;
 
   const imageURL = event.target.dataset.source;
 
