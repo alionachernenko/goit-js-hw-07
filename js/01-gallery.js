@@ -37,11 +37,11 @@ function onGalleryItemClick(event) {
   const instance = basicLightbox.create(
     ` <div class="modal"> <img src="${imageURL}"/> </div> `,
     {
-      onShow: () => {
-        galleryRef.addEventListener("keydown", onEscapeButtonDown);
+      onShow: (instance) => {
+        document.addEventListener("keydown", onEscapeButtonDown);
       },
-      onClose: () => {
-        galleryRef.removeEventListener("keydown", onEscapeButtonDown);
+      onClose: (instance) => {
+        document.removeEventListener("keydown", onEscapeButtonDown);
       },
     }
   );
